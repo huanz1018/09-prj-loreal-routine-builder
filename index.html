@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,6 +17,18 @@
 
   <body>
     <div class="page-wrapper">
+      <!------- Language Toggle ------->
+      <div class="language-toggle">
+        <button
+          id="toggleRTL"
+          class="rtl-toggle-btn"
+          aria-label="Toggle language direction"
+        >
+          <i class="fa-solid fa-language"></i>
+          <span id="directionLabel">RTL</span>
+        </button>
+      </div>
+
       <!------- Header / Branding ------->
       <header class="site-header">
         <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="logo" />
@@ -37,6 +49,15 @@
           <option value="suncare">Suncare</option>
           <option value="fragrance">Fragrance</option>
         </select>
+        <div class="search-input-wrapper">
+          <input
+            type="text"
+            id="productSearch"
+            placeholder="Search products by name or keyword..."
+            aria-label="Search products"
+          />
+          <i class="fa-solid fa-search search-icon"></i>
+        </div>
       </div>
 
       <!-- Products Grid -->
@@ -85,8 +106,9 @@
       </footer>
     </div>
 
-    <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
-    <script src="secrets.js"></script>
+    <!-- Using Cloudflare Worker - no secrets.js needed! -->
+    <!-- <script src="secrets.js"></script> -->
+    <!-- Main script with selection + chat features -->
     <script src="script.js"></script>
   </body>
 </html>
